@@ -27,32 +27,41 @@ for (let i = 0; i < squares.length; i++) {
 // announcerBox.innerHTML = ""
 // document.body.appendChild(announcerBox);
 
-let playerOnePlays = [];
-let playerTwoPlays = [];
+let playerOnePlays = [false, false, false, false, false, false, false, false, false];
+let playerTwoPlays = [false, false, false, false, false, false, false, false, false];
 let plays = 0;
 
 function handleClick(square) {
     if (plays % 2 === 0) {
         document.getElementById("square" + (square.id)).style.backgroundColor = "red";
-        console.log("Spelare 1 klickade på ruta " + square.id);
-        playerOnePlays.push(square.id);
+        console.log("Röd klickade på ruta " + square.id);
+        playerOnePlays.splice((square.id - 1), 1, true);
         console.log(playerOnePlays);
     } else if (plays % 2 === 1) {
         document.getElementById("square" + (square.id)).style.backgroundColor = "green";
-        console.log("Spelare 2 klickade på ruta " + square.id);
-        playerTwoPlays.push(square.id);
+        console.log("Grön klickade på ruta " + square.id);
+        playerTwoPlays.splice((squares.id - 1), 1, true);
         console.log(playerTwoPlays);
     }
     plays += 1;
-    winCondition();
+    gameCheck();
 }
 
-function winCondition() {
-    if (playerOnePlays.includes()) {
-        alert("Spelare 1 vann");
+const winningConditions = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6]
+];
+
+function gameCheck() {
+    for (let i = 0; i < playerOnePlays.length; i++) {
+
     }
-
-
 }
 
 
