@@ -1,0 +1,13 @@
+body {
+    height: 100%;
+    width: 100%;
+    background-color: lightgray;
+    display: flex;
+    flex-wrap: wrap;
+    width: 700px;
+    height: 700px;
+    div {
+        width: 33%;
+        border: 1px solid black;
+    }
+}
