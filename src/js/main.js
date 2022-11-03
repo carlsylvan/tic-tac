@@ -34,7 +34,7 @@ for(let i = 0; i < 9; i++){
     playerTwoPlays.push(false);
 }
 
-const winningConditions = [
+const winConditions = [
     [true, true, true, false, false, false, false, false, false],
     [false, false, false, true, true, true, false, false, false],
     [false, false, false, false, false, false, true, true, true],
@@ -52,8 +52,8 @@ function handleClick(square) {
             playerOnePlays.splice((square.id - 1), 1, true);
             document.getElementById("square" + (square.id)).style.backgroundColor = "red";
             console.log("Röd klickade på ruta " + square.id);
-                for(let i = 0; i < winningConditions.length; i++){
-                    if(JSON.stringify(playerOnePlays)===JSON.stringify(winningConditions[i])){
+                for(let i = 0; i < winConditions.length; i++){
+                    if(JSON.stringify(playerOnePlays)===JSON.stringify(winConditions[i])){
                         alert("Spelare ett (röd) vann!");
                     }
                 }
@@ -64,8 +64,8 @@ function handleClick(square) {
             playerTwoPlays.splice((square.id - 1), 1, true);
             document.getElementById("square" + (square.id)).style.backgroundColor = "green";
             console.log("Grön klickade på ruta " + square.id);
-                for(let i = 0; i < winningConditions.length; i++){
-                    if(JSON.stringify(playerTwoPlays)===JSON.stringify(winningConditions[i])){
+                for(let i = 0; i < winConditions.length; i++){
+                    if(JSON.stringify(playerTwoPlays)===JSON.stringify(winConditions[i])){
                         alert("Spelare två (grön) vann!")
                     }
                 }
@@ -102,7 +102,7 @@ function handleClick(square) {
 //         console.log(playerTwoPlays);
 //     }
 //     plays += 1;
-//     gameCheckPlayerOne();
+//     gameCheck();
 // }
 
 // let announcerBox = document.createElement("span");
