@@ -48,7 +48,7 @@ const winConditions = [
 
 
 function handleClick(square) {
-        if(plays % 2===0){
+        if(plays % 2 === 0){
             playerOnePlays.splice((square.id - 1), 1, true);
             document.getElementById("square" + (square.id)).style.backgroundColor = "red";
             console.log("Röd klickade på ruta " + square.id);
