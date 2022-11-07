@@ -25,7 +25,6 @@ for (let i = 0; i < squares.length; i++) {
 
 let plays = 0;
 
-
 let playerOnePlays = [];
 let playerTwoPlays = [];
 
@@ -44,8 +43,6 @@ const winConditions = [
     [true, false, false, false, true, false, false, false, true],
     [false, false, true, false, true, false, true, false, false]
 ];
-
-
 
 function handleClick(square) {
         if(plays % 2 === 0){
